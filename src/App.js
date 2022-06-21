@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import github from "./apis/github";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [owner, setOwner] = useState('RomelLopez')
+    const [repo, setRepo] = useState('RomelLopez.github.io')
+
+    const handleSubmit = async () => {
+        const res = await github.get(`/${owner}/${repo}/commits`, {
+        })
+        res.data.map((c) => {
+            console.log(c.commit)
+        })
+
+    }
+
+    return (
+        <div>
+            App
+            <button
+                className="btn btn-primary"
+                onClick={handleSubmit}
+            >
+                Click
+            </button>
+        </div >
+    )
+};
 
 export default App;
