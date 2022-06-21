@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import github from "./apis/github";
 
-const App = () => {
-    const [owner, setOwner] = useState('RomelLopez')
-    const [repo, setRepo] = useState('RomelLopez.github.io')
+import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
 
-    const handleSubmit = async () => {
+const App = () => {
+    const [commits, setCommits] = useState([])
+
+    const handleSubmit = async (owner, repo) => {
         const res = await github.get(`/${owner}/${repo}/commits`, {
         })
         res.data.map((c) => {
@@ -16,13 +18,8 @@ const App = () => {
 
     return (
         <div>
-            App
-            <button
-                className="btn btn-primary"
-                onClick={handleSubmit}
-            >
-                Click
-            </button>
+            <Header />
+            <SearchBar onFormSubmit={handleSubmit} />
         </div >
     )
 };
