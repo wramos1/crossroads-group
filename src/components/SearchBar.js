@@ -11,26 +11,37 @@ const SearchBar = ({ onFormSubmit }) => {
 
     return (
         <div>
-            <form className="mb-3" onSubmit={onSubmit}>
-                <label className="form-label">Owner</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder={owner}
-                    value={owner}
-                    onChange={e => setOwner(e.target.value)}
-                />
 
-                <label className="form-label">Repo Name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder={repo}
-                    value={repo}
-                    onChange={e => setRepo(e.target.value)}
-                />
-                <button onSubmit={onSubmit}>Search</button>
+            <form className="row g-3" onSubmit={onSubmit}>
+
+                <div className="col-md-6">
+                    <label className="form-label">Owner</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder={owner}
+                        value={owner}
+                        onChange={e => setOwner(e.target.value)}
+                    />
+                </div>
+
+                <div className="col-md-6">
+                    <label className="form-label">Repo Name</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder={repo}
+                        value={repo}
+                        onChange={e => setRepo(e.target.value)}
+                    />
+                </div>
+
+                <div>
+                    <button className="btn btn-outline-light" onSubmit={onSubmit}>Search</button>
+                </div>
+
             </form>
+
         </div>
     )
 }

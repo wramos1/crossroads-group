@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    background-color: rgb(33, 37, 41);
+}
+
+#app {
+    height: 100vh;
+}
+
+#commit {
+    border: 1px solid white;
+    margin: 1% 0;
+    padding: 2px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}

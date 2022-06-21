@@ -4,21 +4,21 @@ import github from "./apis/github";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import CommitList from "./components/CommitList";
+import "./styles/App.css";
 
 class App extends Component {
-    state = { commits: [] }
+    state = { commits: [] };
 
     handleSubmit = async (owner, repo) => {
         const res = await github.get(`/${owner}/${repo}/commits`, {
-        })
+        });
 
-        this.setState({ commits: res.data })
-
+        this.setState({ commits: res.data });
     }
 
     render() {
         return (
-            <div>
+            <div className="p-3 mb-2 bg-dark text-white" id="app">
                 <Header />
                 <SearchBar onFormSubmit={this.handleSubmit} />
                 <CommitList commits={this.state.commits} />
