@@ -3,6 +3,7 @@ import github from "./apis/github";
 
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
+import CommitList from "./components/CommitList";
 
 class App extends Component {
     state = { commits: [] }
@@ -20,6 +21,7 @@ class App extends Component {
             <div>
                 <Header />
                 <SearchBar onFormSubmit={this.handleSubmit} />
+                <CommitList commits={this.state.commits} />
             </div >
         )
     }
