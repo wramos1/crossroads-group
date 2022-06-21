@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import github from "./apis/github";
 
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 
-const App = () => {
-    const [commits, setCommits] = useState([])
+class App extends Component {
+    state = { commits: [] }
 
-    const handleSubmit = async (owner, repo) => {
+    handleSubmit = async (owner, repo) => {
         const res = await github.get(`/${owner}/${repo}/commits`, {
         })
-        res.data.map((c) => {
-            console.log(c.commit)
-        })
+
+        this.setState({ commits: res.data })
 
     }
 
-    return (
-        <div>
-            <Header />
-            <SearchBar onFormSubmit={handleSubmit} />
-        </div >
-    )
+    render() {
+        return (
+            <div>
+                <Header />
+                <SearchBar onFormSubmit={this.handleSubmit} />
+            </div >
+        )
+    }
 };
 
 export default App;
