@@ -33,6 +33,21 @@ body {
     box-shadow: 0 0 0.6rem rgb(255, 238, 0);
 }
 
+#sortSelect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 1%;
+}
+
+#sortSelect:focus {
+    border: 1px solid yellow;
+    box-shadow: 0 0 0.6rem rgb(255, 238, 0);
+}
+
 #commit {
     border: 1px solid white;
     margin: 1% 0;
@@ -43,4 +58,18 @@ body {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+
+.btn:hover {
+    border: 1px solid yellow;
+    box-shadow: 0 0 0.6rem rgb(255, 238, 0);
+}
+
+#noCommitHistoryTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% auto;
 }
