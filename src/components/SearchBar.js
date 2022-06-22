@@ -19,7 +19,7 @@ const SearchBar = ({ onFormSubmit }) => {
             <form className="row g-3" onSubmit={onSubmit}>
 
                 <div className="col-md-6">
-                    <label className="form-label">Owner</label>
+                    <label className="form-label">Username</label>
                     <input
                         type="text"
                         className="form-control"

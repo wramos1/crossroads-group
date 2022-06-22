@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div id="headerContainer">
             <h1 id="title">
-                Git Commit History
+                Git Commit History Search
             </h1>
             <h2 id="subtitle">
                 Crossroads-Group
