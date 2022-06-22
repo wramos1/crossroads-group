@@ -2,11 +2,13 @@ import React from "react";
 
 const Header = () => {
     return (
-        <div>
-            <h1>
+        <div id="headerContainer">
+            <h1 id="title">
                 Git Commit History
             </h1>
-            <h2>Crossroads-Group</h2>
+            <h2 id="subtitle">
+                Crossroads-Group
+            </h2>
         </div>
     )
 }

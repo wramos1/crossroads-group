@@ -7,6 +7,32 @@ body {
     height: 100vh;
 }
 
+#headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1% 0;
+}
+
+#title {
+    display: inline-block;
+    border-bottom: 1px solid white;
+}
+
+#subtitle {
+    font-size: large;
+}
+
+.row {
+    margin: 0 10%;
+}
+
+.form-control:focus {
+    border: 1px solid yellow;
+    box-shadow: 0 0 0.6rem rgb(255, 238, 0);
+}
+
 #commit {
     border: 1px solid white;
     margin: 1% 0;
