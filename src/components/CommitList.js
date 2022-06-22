@@ -42,28 +42,30 @@ const CommitList = ({ commits, owner, repo }) => {
             return (
                 <div>
                     <h1 id="noCommitHistoryTitle">
-                        Couldn't find that one
+                        No History Found
                     </h1>
                 </div>
             )
         }
-        return (
-            <div>
-                <h2>
-                    {`History of ${owner}'s '${repo}' commits`}
-                </h2>
+        else {
+            return (
+                <div>
+                    <h2>
+                        {`History of ${owner}'s '${repo}' commits`}
+                    </h2>
 
-                <select id="sortSelect" defaultValue="Newest" onChange={e => reSort(e)}>
+                    <select id="sortSelect" defaultValue="Newest" onChange={e => reSort(e)}>
 
-                    <option>Sort By</option>
-                    <option value="Newest">Newest</option>
-                    <option value="Oldest">Oldest</option>
+                        <option>Sort By</option>
+                        <option value="Newest">Newest</option>
+                        <option value="Oldest">Oldest</option>
 
-                </select>
+                    </select>
 
-                {mapCommits}
-            </div>
-        )
+                    {mapCommits}
+                </div>
+            )
+        }
     }
 
     return (

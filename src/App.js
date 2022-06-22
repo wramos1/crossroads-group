@@ -18,7 +18,7 @@ class App extends Component {
             this.setState({ commits: res.data });
         }
         catch (e) {
-            console.log(e, "Something went wrong");
+            console.log(e.response.data, "Something went wrong");
             this.setState({ commits: [] });
         }
 
