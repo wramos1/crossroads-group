@@ -10,7 +10,7 @@ class App extends Component {
     state = { commits: [], owner: '', repo: '' };
 
     handleSubmit = async (owner, repo) => {
-        this.setState({ owner, repo })
+        this.setState({ owner, repo });
         try {
             const res = await github.get(`/${owner}/${repo}/commits`, {
             });

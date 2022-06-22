@@ -10,7 +10,7 @@ const SearchBar = ({ onFormSubmit }) => {
     }
 
     useEffect(() => {
-        onFormSubmit(owner, repo)
+        onFormSubmit(owner, repo);
     }, [])
 
     return (
@@ -19,7 +19,9 @@ const SearchBar = ({ onFormSubmit }) => {
             <form className="row g-3" onSubmit={onSubmit}>
 
                 <div className="col-md-6">
-                    <label className="form-label">Username</label>
+                    <label className="form-label">
+                        Username
+                    </label>
                     <input
                         type="text"
                         className="form-control"
@@ -30,7 +32,9 @@ const SearchBar = ({ onFormSubmit }) => {
                 </div>
 
                 <div className="col-md-6">
-                    <label className="form-label">Repo Name</label>
+                    <label className="form-label">
+                        Repo Name
+                    </label>
                     <input
                         type="text"
                         className="form-control"
@@ -41,7 +45,11 @@ const SearchBar = ({ onFormSubmit }) => {
                 </div>
 
                 <div>
-                    <button className="btn btn-outline-light" onSubmit={onSubmit}>Search</button>
+                    <button className="btn btn-outline-light"
+                        onSubmit={onSubmit}
+                    >
+                        Search
+                    </button>
                 </div>
 
             </form>

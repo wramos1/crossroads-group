@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Commit from "./Commit";
 
 const CommitList = ({ commits, owner, repo }) => {
-    const [select, setSelect] = useState('Latest')
+    const [select, setSelect] = useState('Latest');
 
     const mapCommits = commits.map(c => {
         return (
@@ -16,7 +16,7 @@ const CommitList = ({ commits, owner, repo }) => {
     })
 
     const reSort = (e) => {
-        setSelect(e.target.value)
+        setSelect(e.target.value);
         return commits.reverse().map((c) => {
             return (
                 <Commit
@@ -37,7 +37,8 @@ const CommitList = ({ commits, owner, repo }) => {
                     <span class="visually-hidden">Loading...</span>
                 </div>
             )
-        } else if (commits.length < 1) {
+        }
+        else if (commits.length < 1) {
             return (
                 <div>
                     <h1 id="noCommitHistoryTitle">
@@ -53,9 +54,11 @@ const CommitList = ({ commits, owner, repo }) => {
                 </h2>
 
                 <select id="sortSelect" defaultValue="Latest" onChange={e => reSort(e)}>
+
                     <option>Sort By</option>
                     <option value="Latest">Latest</option>
                     <option value="Earliest">Earliest</option>
+
                 </select>
 
                 {mapCommits}
