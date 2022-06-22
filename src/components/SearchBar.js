@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const SearchBar = ({ onFormSubmit }) => {
     const [owner, setOwner] = useState('wramos1')
@@ -8,6 +8,10 @@ const SearchBar = ({ onFormSubmit }) => {
         event.preventDefault();
         onFormSubmit(owner, repo);
     }
+
+    useEffect(() => {
+        onFormSubmit(owner, repo)
+    }, [])
 
     return (
         <div>
