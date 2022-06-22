@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crossroads-group/static/css/main.1a3f8834.css",
-    "main.js": "/crossroads-group/static/js/main.d50f51c4.js",
+    "main.js": "/crossroads-group/static/js/main.5cfcee4a.js",
     "index.html": "/crossroads-group/index.html",
     "main.1a3f8834.css.map": "/crossroads-group/static/css/main.1a3f8834.css.map",
-    "main.d50f51c4.js.map": "/crossroads-group/static/js/main.d50f51c4.js.map"
+    "main.5cfcee4a.js.map": "/crossroads-group/static/js/main.5cfcee4a.js.map"
   },
   "entrypoints": [
     "static/css/main.1a3f8834.css",
-    "static/js/main.d50f51c4.js"
+    "static/js/main.5cfcee4a.js"
   ]
 }
