@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Commit from "./Commit";
 
 const CommitList = ({ commits, owner, repo }) => {
-    const [select, setSelect] = useState('Latest');
+    const [select, setSelect] = useState('Newest');
 
     const mapCommits = commits.map(c => {
         return (
@@ -53,11 +53,11 @@ const CommitList = ({ commits, owner, repo }) => {
                     {`History of ${owner}'s '${repo}' commits`}
                 </h2>
 
-                <select id="sortSelect" defaultValue="Latest" onChange={e => reSort(e)}>
+                <select id="sortSelect" defaultValue="Newest" onChange={e => reSort(e)}>
 
                     <option>Sort By</option>
-                    <option value="Latest">Latest</option>
-                    <option value="Earliest">Earliest</option>
+                    <option value="Newest">Newest</option>
+                    <option value="Oldest">Oldest</option>
 
                 </select>
 
