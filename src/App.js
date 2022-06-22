@@ -7,13 +7,21 @@ import CommitList from "./components/CommitList";
 import "./styles/App.css";
 
 class App extends Component {
-    state = { commits: [] };
+    state = { commits: [], owner: '', repo: '' };
 
     handleSubmit = async (owner, repo) => {
-        const res = await github.get(`/${owner}/${repo}/commits`, {
-        });
+        this.setState({ owner, repo })
+        try {
+            const res = await github.get(`/${owner}/${repo}/commits`, {
+            });
 
-        this.setState({ commits: res.data });
+            this.setState({ commits: res.data });
+        }
+        catch (e) {
+            console.log(e, "Something went wrong");
+            this.setState({ commits: [] });
+        }
+
     }
 
     render() {
@@ -21,7 +29,11 @@ class App extends Component {
             <div className="p-3 mb-2 bg-dark text-white" id="app">
                 <Header />
                 <SearchBar onFormSubmit={this.handleSubmit} />
-                <CommitList commits={this.state.commits} />
+                <CommitList
+                    commits={this.state.commits}
+                    owner={this.state.owner}
+                    repo={this.state.repo}
+                />
             </div >
         )
     }
