@@ -9,4 +9,4 @@
 5. Users can also sort the history by oldest or newest commits. 
 
 
-_Technologies Used: React, HTML, CSS, Bootstrap_
+_Technologies Used: React, HTML, CSS, Bootstrap, External APIs_
